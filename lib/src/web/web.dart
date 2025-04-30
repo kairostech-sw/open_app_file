@@ -1,11 +1,9 @@
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:html';
+import 'package:web/web.dart' as web;
 
 void open(String uri, String filename) {
-  AnchorElement(
-    href: uri,
-  )
+  final anchor = web.HTMLAnchorElement()
+    ..href = uri
     ..setAttribute('download', filename)
-    ..setAttribute('target', '_blank')
-    ..click();
+    ..setAttribute('target', '_blank');
+  anchor.click();
 }
