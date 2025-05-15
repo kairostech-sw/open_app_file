@@ -1,3 +1,6 @@
+## 4.0.4
+* Fixed compatibility issues with Flutter 3.27.2 (credit @rymesaint)
+* Restored the fix for the Linux files open with special characters (credit @aws1313)
 ## 4.0.3
 * Fixed issue with file opening on Windows platform
 * Improved error handling for unsupported file types
