@@ -18,13 +18,18 @@ class OpenAppFile {
   /// However, for some edge cases there's a way to affect how the system
   /// builds the list of apps that can handle viewing/editing of the provided
   /// file:
-  /// - [mimeType] overrides the type inferred from the file extension on
-  /// Android, has no effect on any other platform. This parameter is passed
-  /// directly to the [Intent.type] property of the produced Intent.
+  /// - [mimeType] Android only
+  /// Overrides the type inferred from the file extension.
+  /// This parameter is passed directly to the [Intent.type] property
+  /// of the produced Intent.
   /// To learn more about how Android system treats MIME types in intents,
-  /// check official documentation
+  /// check official documentation:
   /// https://developer.android.com/guide/components/intents-filters
-  /// - [uti] to provide UTI on iOS, no effect on any other platform
+  /// - [uti] iOS only
+  /// Provides explicit UTI (Uniform Type Identifier).
+  /// - [locate] Mac OS only
+  /// If `true`, adds -R parameter to the open call to reveal the file in
+  /// Finder.
   static Future<OpenResult> open(
     String filePath, {
     String? mimeType,

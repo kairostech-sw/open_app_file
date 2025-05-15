@@ -2,12 +2,10 @@
 * Fixed issue with file opening on Windows platform
 * Improved error handling for unsupported file types
 * Added better documentation for platform-specific requirements
-
 ## 4.0.2
 * Added locate parameter for MacOS reveal option (credit @ujwalbasnet1)
 * More extensive documentation
 * Dependencies versions bump
-
 ## 4.0.1
 * A lot more straightforward Android library implementation
 * Extended example for testing Android permissions and different file locations

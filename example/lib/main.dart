@@ -10,13 +10,16 @@ import 'package:http/http.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+// ignore: depend_on_referenced_packages
 import 'package:open_app_file/open_app_file.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
-  _MyAppState createState() => _MyAppState();
+  State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
@@ -71,42 +74,42 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               ElevatedButton(
-                child: Text('Open generated file'),
+                child: const Text('Open generated file'),
                 onPressed: () async {
                   _openFile(await createTextFile(_generateRandomString(30)));
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8.0,
               ),
               ElevatedButton(
-                child: Text('Download and open image'),
+                child: const Text('Download and open image'),
                 onPressed: () async {
                   _openFile(await _downloadFile(
                       'https://picsum.photos/200/300', 'test.jpg'));
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8.0,
               ),
               ElevatedButton(
-                  child: Text('Download and open calendar event'),
+                  child: const Text('Download and open calendar event'),
                   onPressed: () async {
                     _openFile(await _downloadFile(
                         'https://raw.githubusercontent.com/yendoplan/open_app_file/master/example/files/test.ics',
                         'test.ics'));
                   }),
-              SizedBox(
+              const SizedBox(
                 height: 8.0,
               ),
               ElevatedButton(
-                child: Text('Open non-existent file'),
+                child: const Text('Open non-existent file'),
                 onPressed: () {
                   _openFile('asdf.qwert');
                 },
               ),
-              Padding(
-                padding: const EdgeInsets.all(24.0),
+              const Padding(
+                padding: EdgeInsets.all(24.0),
                 child: Text('To test external file access on Android:\n'
                     '1. Create or download a file to a restricted location (for example, "test.txt" in the root of external storage)\n'
                     '2. Set the file path in the field below and try to open it\n'
@@ -121,7 +124,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               ElevatedButton(
-                child: Text('Open file'),
+                child: const Text('Open file'),
                 onPressed: () async {
                   _openFile(_fileNameController.value.text);
                 },
